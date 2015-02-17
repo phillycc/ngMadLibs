@@ -2,57 +2,45 @@
 
 angular.module('ngMadLibs')
   .controller('MainCtrl', function ($scope) {
-    $scope.awesomeThings = [
+    $scope.keywords = [
       {
-        'title': 'AngularJS',
-        'url': 'https://angularjs.org/',
-        'description': 'HTML enhanced for web apps!',
-        'logo': 'angular.png'
+        'name': 'femaleName',
+        'placeholder': 'female name'
       },
       {
-        'title': 'BrowserSync',
-        'url': 'http://browsersync.io/',
-        'description': 'Time-saving synchronised browser testing.',
-        'logo': 'browsersync.png'
+        'name': 'jobTitle',
+        'placeholder': 'job title'
       },
       {
-        'title': 'GulpJS',
-        'url': 'http://gulpjs.com/',
-        'description': 'The streaming build system.',
-        'logo': 'gulp.png'
+        'name': 'tediousTask',
+        'placeholder': 'tedious task'
       },
       {
-        'title': 'Jasmine',
-        'url': 'http://jasmine.github.io/',
-        'description': 'Behavior-Driven JavaScript.',
-        'logo': 'jasmine.png'
+        'name': 'dirtyTask',
+        'placeholder': 'dirty task'
       },
       {
-        'title': 'Karma',
-        'url': 'http://karma-runner.github.io/',
-        'description': 'Spectacular Test Runner for JavaScript.',
-        'logo': 'karma.png'
+        'name': 'celebrity',
+        'placeholder': 'celebrity'
       },
       {
-        'title': 'Protractor',
-        'url': 'https://github.com/angular/protractor',
-        'description': 'End to end test framework for AngularJS applications built on top of WebDriverJS.',
-        'logo': 'protractor.png'
+        'name': 'uselessSkill',
+        'placeholder': 'useless skill'
       },
       {
-        'title': 'jQuery',
-        'url': 'http://jquery.com/',
-        'description': 'jQuery is a fast, small, and feature-rich JavaScript library.',
-        'logo': 'jquery.jpg'
+        'name': 'obnoxiousCelebrity',
+        'placeholder': 'obnoxious celebrity'
       },
       {
-        'title': 'Bootstrap',
-        'url': 'http://getbootstrap.com/',
-        'description': 'Bootstrap is the most popular HTML, CSS, and JS framework for developing responsive, mobile first projects on the web.',
-        'logo': 'bootstrap.png'
+        'name': 'hugeNumber',
+        'placeholder': 'huge number'
+      },
+      {
+        'name': 'adjective',
+        'placeholder': 'adjective'
       }
     ];
-    angular.forEach($scope.awesomeThings, function(awesomeThing) {
-      awesomeThing.rank = Math.random();
+    angular.forEach($scope.keywords, function(keyword) {
+      keyword.rank = Math.random();
     });
   });

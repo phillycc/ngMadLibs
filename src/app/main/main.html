@@ -1,7 +1,5 @@
 <div class="container">
 
-  <!--<div ng-include="'components/navbar/navbar.html'"></div>-->
-
   <div class="jumbotron text-center">
     <p><img src="assets/images/mad-lib-happy-face.png"></p>
     <p><img src="assets/images/ng-mad-libs-logo.png"></p>
@@ -9,22 +7,19 @@
   </div>
 
   <div class="row">
-    <div class="col-sm-6 col-md-4" ng-repeat="awesomeThing in awesomeThings | orderBy:'rank'">
-      <div class="thumbnail">
-        <img class="pull-right" ng-src="assets/images/{{awesomeThing.logo}}" alt="{{awesomeThing.title}}">
-        <div class="caption">
-          <h3>{{awesomeThing.title}}</h3>
-          <p>{{awesomeThing.description}}</p>
-          <p><a ng-href="{{awesomeThing.url}}">{{awesomeThing.url}}</a></p>
-        </div>
-      </div>
-    </div>
-  </div>
+    <form class="col-sm-12 reset" role="form" name="madLibForm">
+      <div class="col-sm-6 col-md-4" ng-repeat="keyword in keywords | orderBy:'rank'">
+        <input name="input" class="form-control" type="text" placeholder="{{ keyword.placeholder }}"><br/>
+      <div>
+    </form>
+  <div>
 
-  <hr>
+  <!--<div class="row">
+    <p>{{female name}} was a {{job title}} who loved technology. Although she loved parts of her job, she absolutely hated  {{tedious task}} and {{dirty task}}. So, {{female_name}} met with her life mentor {{celebrity}} who told her to learn how to {{useless skill}} with Thinkful. Thinkful didn't offer a course on {{useless skill}} so she studied programming instead.</p>
+    <p>What a great decision! With her new skills, {{female name}} built a(n) {{adjective}} robot named {{obnoxiuous celbertity}} that not only loved {{dirty task}} but did it {{huge number}} faster.</p>
+  </div>-->
 
   <div class="footer">
-    <p>With ♥ from <a href="https://twitter.com/Swiip">@Swiip</a></p>
   </div>
 
 </div>
