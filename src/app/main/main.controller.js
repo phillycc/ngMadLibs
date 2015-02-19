@@ -2,6 +2,7 @@
 
 angular.module('ngMadLibs')
   .controller('MainCtrl', function ($scope) {
+    $scope.keywords = {};
     $scope.keywords = [
       {
         'name': 'femaleName',
