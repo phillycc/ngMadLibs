@@ -2,46 +2,63 @@
 
 angular.module('ngMadLibs')
   .controller('MainCtrl', function ($scope) {
-    $scope.keywords = {};
+
     $scope.keywords = [
       {
         'name': 'femaleName',
-        'placeholder': 'female name'
+        'placeholder': 'female name',
+        'type': 'text'
       },
       {
         'name': 'jobTitle',
-        'placeholder': 'job title'
+        'placeholder': 'job title',
+        'type': 'text'
       },
       {
         'name': 'tediousTask',
-        'placeholder': 'tedious task'
+        'placeholder': 'tedious task',
+        'type': 'text'
       },
       {
         'name': 'dirtyTask',
-        'placeholder': 'dirty task'
+        'placeholder': 'dirty task',
+        'type': 'text'
       },
       {
         'name': 'celebrity',
-        'placeholder': 'celebrity'
+        'placeholder': 'celebrity',
+        'type': 'text'
       },
       {
         'name': 'uselessSkill',
-        'placeholder': 'useless skill'
+        'placeholder': 'useless skill',
+        'type': 'text'
       },
       {
         'name': 'obnoxiousCelebrity',
-        'placeholder': 'obnoxious celebrity'
+        'placeholder': 'obnoxious celebrity',
+        'type': 'text'
       },
       {
         'name': 'hugeNumber',
-        'placeholder': 'huge number'
+        'placeholder': 'huge number',
+        'type': 'number'
       },
       {
         'name': 'adjective',
-        'placeholder': 'adjective'
+        'placeholder': 'adjective',
+        'type': 'text'
       }
     ];
+
+    $scope.$this = $scope;
+
     angular.forEach($scope.keywords, function(keyword) {
       keyword.rank = Math.random();
     });
+
+    $scope.submit = function(){
+      console.log($scope.madLibForm.length);
+    }
+
   });
