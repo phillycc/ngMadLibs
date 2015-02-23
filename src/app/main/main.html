@@ -12,7 +12,10 @@
     <form class="col-sm-12 reset" role="form" name="madLibForm" ng-submit="submit()">
       <h3>Provide the following words:</h3>
       <div class="col-sm-6 col-md-4" ng-repeat="keyword in keywords | orderBy:'rank'">
-          <input type="{{ keyword.type }}" class="form-control" ng-model="$this[keyword.name]" placeholder="{{ keyword.placeholder }}" required><br/>
+          <input type="{{ keyword.type }}" class="form-control" ng-model="$this[keyword.name]" placeholder="{{ keyword.placeholder }}" ng-minlength="3" required><br/>
+          <div ng-messages="madLibForm.$this[keyword.name].$error">
+              <div ng-message="required">This is a required field</div>
+          </div>
       </div>
       <button class="btn btn-default">Generate My Mad Lib</button>
     </form>
