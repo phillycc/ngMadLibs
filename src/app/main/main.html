@@ -8,19 +8,19 @@
     </div>
   </header>
 
-  <div class="row" id="formML" ng-show="showMadLibForm=true">
+  <div class="row" id="formML" ng-show="showMadLibForm">
     <form class="col-sm-12 reset" role="form" name="madLibForm" ng-submit="submit()">
       <h3>Provide the following words:</h3>
       <div class="col-sm-6 col-md-4" ng-repeat="keyword in keywords | orderBy:'rank'">
-          <input type="{{ keyword.type }}" class="form-control" ng-model="$this[keyword.name]" placeholder="{{ keyword.placeholder }}" ng-minlength="3" required><br/>
-          <div ng-messages="madLibForm.$this[keyword.name].$error">
+          <input type="{{ keyword.type }}" class="form-control" name="{{ keyword.name }}" ng-model="$this[keyword.name]" placeholder="{{ keyword.placeholder }}" ng-minlength="3" required>
+          <div ng-messages="madLibForm.{{ keyword.name }}.$error" ng-if="madLibForm.{{ keyword.name }}.$dirty" class="ngMessagesClass">
               <div ng-message="required">This is a required field</div>
           </div>
+          <br/>
       </div>
-      <button class="btn btn-default" ng-click="showMadLibForm">Generate My Mad Lib</button>
+      <button class="btn btn-default">Generate My Mad Lib</button>
     </form>
-  <div>
-
+  </div>
   <div class="row" ng-hide="showMadLibForm">
     <div class="col-sm-12">
       <p>{{ femaleName }} was a {{ jobTitle }} who loved technology. Although she loved parts of her job, she absolutely hated  {{ tediousTask }} and {{ dirtyTask }}. So, {{ femaleName }} met with her life mentor {{ celebrity }} who told her to learn how to {{ uselessSkill }} with Thinkful. Thinkful didn't offer a course on {{ uselessSkill }} so she studied programming instead.</p>

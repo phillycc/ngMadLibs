@@ -57,8 +57,10 @@ angular.module('ngMadLibs')
       keyword.rank = Math.random();
     });
 
+    $scope.showMadLibForm = true;
+
     $scope.submit = function(){
-      $scope.showMadlibForm = false;
+      $scope.showMadLibForm = false;
     }
 
   });
