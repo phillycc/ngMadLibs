@@ -58,7 +58,7 @@ angular.module('ngMadLibs')
     });
 
     $scope.submit = function(){
-      console.log($scope.madLibForm.length);
+      $scope.showMadlibForm = false;
     }
 
   });
