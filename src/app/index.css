@@ -7,6 +7,10 @@ header{
   outline:1px solid #666;
 }
 
+.bold {
+    font-weight: bold;
+}
+
 .col-sm-4 img{
   width: 12em;
   display: block;
@@ -29,21 +33,52 @@ header{
   text-align:center;
 }
 
-#formML {
+#inputML {
   margin:4ex 0;
 }
 
+#outputML {
+  font-size:12pt;
+  margin:4ex 0.7em;
+}
+
+#decorator {
+  text-decoration:underline;
+  font-weight:bold;
+}
+
 h3 {
-  font-size:14pt;
+  font-size:13pt;
   margin:0 0 1em 0.9em;
 }
 
+.btn{
+  font-size:11pt;
+}
+
 button {
+  margin-top:0.5em;
   margin-left:0.9em;
+}
+
+#inputML-show, #inputML-hide, #outputML-show, #outputML-hide {
+  -webkitition:all linear 0.3s;
+  -moz-transition:all linear 0.3s;
+  -ms-transition:all linear 0.3s;
+  -o-transition:all linear 0.3s;
+  transition:all linear 0.3s;
 }
 
 .ngMessagesClass {
     padding:0;
     margin:0;
     color: red;
+}
+
+.ngMessagesClass.ng-active {
+  // messages are visible
+}
+
+.ngMessagesClass.ng-inactive {
+  // messages are hidden
 }

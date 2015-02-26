@@ -8,27 +8,28 @@
     </div>
   </header>
 
-  <div class="row" id="formML" ng-show="showMadLibForm">
+  <div class="row" id="inputML" ng-show="showMadLibForm" ng-animate="'inputML'">
     <form class="col-sm-12 reset" role="form" name="madLibForm" ng-submit="submit()">
       <h3>Provide the following words:</h3>
       <div class="col-sm-6 col-md-4" ng-repeat="keyword in keywords | orderBy:'rank'">
-          <input type="{{ keyword.type }}" class="form-control" name="{{ keyword.name }}" ng-model="$this[keyword.name]" placeholder="{{ keyword.placeholder }}" ng-minlength="3" required>
-          <div ng-messages="madLibForm.{{ keyword.name }}.$error" ng-if="madLibForm.{{ keyword.name }}.$dirty" class="ngMessagesClass">
+          <input type="{{ keyword.type }}" class="form-control" name="{{ keyword.name }}" ng-model="$this[keyword.name]" placeholder="{{ keyword.placeholder }}" ng-minlength="3">
+          <div ng-messages="madLibForm.{{ keyword.name }}.$error" class="ngMessagesClass">
               <div ng-message="required">This is a required field</div>
+              <div ng-message="number">Must be a valid number</div>
           </div>
           <br/>
       </div>
-      <button class="btn btn-default">Generate My Mad Lib</button>
+      <button class="btn btn-danger">Generate My Mad Lib</button>
     </form>
   </div>
-  <div class="row" ng-hide="showMadLibForm">
+  <div class="row" id="outputML" ng-hide="showMadLibForm" ng-animate="'outputML'">
     <div class="col-sm-12">
-      <p>{{ femaleName }} was a {{ jobTitle }} who loved technology. Although she loved parts of her job, she absolutely hated  {{ tediousTask }} and {{ dirtyTask }}. So, {{ femaleName }} met with her life mentor {{ celebrity }} who told her to learn how to {{ uselessSkill }} with Thinkful. Thinkful didn't offer a course on {{ uselessSkill }} so she studied programming instead.</p>
-      <p>What a great decision! With her new skills, {{ femaleName }} built a(n) {{ adjective }} robot named {{ obnoxiousCelebrity }} that not only loved {{ dirtyTask }} but did it {{ hugeNumber }} times faster.</p>
+      <p><u><strong> {{ femaleName }} </strong></u> was a <u><strong> {{ jobTitle }} </strong></u> who loved technology. Although she loved parts of her job, she absolutely hated <u><strong> {{ tediousTask }} </strong></u> and {{ dirtyTask }} </strong></u>. So, <u><strong> {{ femaleName }} </strong></u> met with her life mentor <u><strong> {{ celebrity }} </strong></u> who told her to learn how to <u><strong> {{ uselessSkill }} </strong></u> with Thinkful. Thinkful didn't offer a course on <u><strong> {{ uselessSkill }} </strong></u> so she studied programming instead.</p>
+      <p>What a great decision! With her new skills, <u><strong> {{ femaleName }} </strong></u> built a(n) <u><strong> {{ adjective }} </strong></u> robot named <u><strong> {{ obnoxiousCelebrity }} </strong></u> that not only loved <u><strong> {{ dirtyTask }} </strong></u> but did it <u><strong> {{ hugeNumber }} </strong></u> times faster.</p>
     </div>
+    <button class="btn btn-danger" ng-click="showMadLibForm=true">Start Over</button>
   </div>
 
   <footer>
   </footer>
-
 </div>
