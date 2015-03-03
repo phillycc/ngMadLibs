@@ -60,7 +60,16 @@ angular.module('ngMadLibs')
     $scope.showMadLibForm = true;
 
     $scope.submit = function(){
-      $scope.showMadLibForm = false;
+
+      if ($scope.madLibForm.$invalid){
+        
+        $scope.madLibForm.$dirty = true;
+        console.log($scope.madLibForm);
+        return;
+      }
+
+
+      //$scope.showMadLibForm = false;
     }
 
   });

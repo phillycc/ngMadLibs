@@ -9,11 +9,11 @@
   </header>
 
   <div class="row" id="inputML" ng-show="showMadLibForm" ng-animate="'inputML'">
-    <form class="col-sm-12 reset" role="form" name="madLibForm" ng-submit="submit()">
+    <form class="col-sm-12 reset" role="form" name="madLibForm" novalidate ng-submit="submit()">
       <h3>Provide the following words:</h3>
       <div class="col-sm-6 col-md-4" ng-repeat="keyword in keywords | orderBy:'rank'">
-          <input type="{{ keyword.type }}" class="form-control" name="{{ keyword.name }}" ng-model="$this[keyword.name]" placeholder="{{ keyword.placeholder }}" ng-minlength="3">
-          <div ng-messages="madLibForm.{{ keyword.name }}.$error" class="ngMessagesClass">
+          <input type="{{ keyword.type }}" class="form-control" name="{{ keyword.name }}" ng-model="$this[keyword.name]" placeholder="{{ keyword.placeholder }}" ng-minlength="3" required>
+          <div ng-messages="madLibForm.{{ keyword.name }}.$error" class="ngMessagesClass" ng-show="madLibForm[keyword.name].$dirty || madLibForm.$dirty">
               <div ng-message="required">This is a required field</div>
               <div ng-message="number">Must be a valid number</div>
           </div>
