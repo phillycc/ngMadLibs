@@ -62,14 +62,13 @@ angular.module('ngMadLibs')
     $scope.submit = function(){
 
       if ($scope.madLibForm.$invalid){
-        
+
         $scope.madLibForm.$dirty = true;
         console.log($scope.madLibForm);
         return;
       }
 
-
-      //$scope.showMadLibForm = false;
+      $scope.showMadLibForm = false;
     }
 
   });

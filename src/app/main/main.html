@@ -9,7 +9,7 @@
   </header>
 
   <div class="row" id="inputML" ng-show="showMadLibForm" ng-animate="'inputML'">
-    <form class="col-sm-12 reset" role="form" name="madLibForm" novalidate ng-submit="submit()">
+    <form class="col-sm-12" role="form" name="madLibForm" novalidate ng-submit="submit()">
       <h3>Provide the following words:</h3>
       <div class="col-sm-6 col-md-4" ng-repeat="keyword in keywords | orderBy:'rank'">
           <input type="{{ keyword.type }}" class="form-control" name="{{ keyword.name }}" ng-model="$this[keyword.name]" placeholder="{{ keyword.placeholder }}" ng-minlength="3" required>
@@ -19,7 +19,9 @@
           </div>
           <br/>
       </div>
-      <button class="btn btn-danger">Generate My Mad Lib</button>
+      <div class="col-sm-12">
+        <button class="btn btn-danger">Generate My Mad Lib</button>
+      </div>
     </form>
   </div>
   <div class="row" id="outputML" ng-hide="showMadLibForm" ng-animate="'outputML'">
